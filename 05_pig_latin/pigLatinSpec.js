@@ -57,6 +57,16 @@ describe("translate", function() {
     expect(s).toEqual("ethay ickquay ownbray oxfay");
   });
 
+  it("keeps capitalized words capitalized but with a different initial capital", function() {
+    var s = translate("Capital Words");
+    expect(s).toEqual("Apitalcay Ordsway");
+  });
+
+  it("retains punctuation from the original phrase", function() {
+    var s = translate("lions, tigers, and bears!");
+    expect(s).toEqual("ionslay, igerstay, anday earsbay!");
+  });
+
   // Test-driving bonus:
   // * write a test asserting that capitalized words are still capitalized (but with a different initial capital letter, of course)
   // * retain the punctuation from the original phrase
